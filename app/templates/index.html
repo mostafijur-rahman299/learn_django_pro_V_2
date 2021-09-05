@@ -1,0 +1,18 @@
+<div style="justify-content: 'center'; align-items: center; width: 100%; margin-top: 300px; margin-left: 600px;">
+  <form method="post" action="{% url 'home' %}">
+    {% csrf_token %}
+
+    <!-- <script src='https://www.google.com/recaptcha/api.js'></script>
+    <div class="g-recaptcha" data-sitekey="6Lcc7j0cAAAAAA9mcW9xdCQJ1XKEnT7iq-PW8bAW"></div> -->
+
+    <div
+        class="h-captcha"
+        data-sitekey="706bd345-94f3-4fcf-9472-3a8dba73d6f1"
+      ></div>
+
+      <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+      
+
+      <button type="submit" class="btn btn-primary" style="margin-top: 30px;">Post</button>
+  </form>
+</div>

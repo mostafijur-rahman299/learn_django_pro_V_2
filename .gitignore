@@ -1,0 +1,9 @@
+__pycache__/
+*.py[cod]
+.env
+db.sqlite3
+vaidnews/media
+vaidnews/static_root
+migrations/
+pgdata/
+data/
