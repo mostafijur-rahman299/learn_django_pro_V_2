@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'app'
+    'app',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -101,6 +102,18 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+CACHES = {
+    'default': {
+        'BACKEND': 'django_redis.cache.RedisCache',
+        'LOCATION': 'redis://127.0.0.1:6379/',
+        'OPTIONS': {
+            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+        }
+    }
+}
+
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
@@ -127,3 +140,5 @@ GOOGLE_RECAPTCHA_SECRET_KEY = '6Lcc7j0cAAAAAIJpxpaPuNdtlnXtvC4qMxE0llry'
 
 HCAPTCHA_SECRET_KEY = '0x450809F4A67542909B137e4383e6F3E35Dd193dd'
 VERIFY_URL = 'https://hcaptcha.com/siteverify'
+
+CACHE_TTL = 60 * 15

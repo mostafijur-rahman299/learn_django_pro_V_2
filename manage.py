@@ -5,7 +5,7 @@ import sys
 
 
 def main():
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Dj_recaptcha_hcaptcha.settings')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'learn_django_pro_V_2.settings')
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
