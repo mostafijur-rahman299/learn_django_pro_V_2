@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app',
+    'payment',
     'rest_framework'
 ]
 
@@ -142,3 +143,8 @@ HCAPTCHA_SECRET_KEY = '0x450809F4A67542909B137e4383e6F3E35Dd193dd'
 VERIFY_URL = 'https://hcaptcha.com/siteverify'
 
 CACHE_TTL = 60 * 15
+
+STRIPE_PUBLISHABLE_KEY = 'pk_test_O6wiMgMeQ0vOb6q24zKjRCoK00ATArkfbL'
+STRIPE_SECRET_KEY = 'sk_test_7R9QtO5N29ROUi0rSpUYv7N700ZwN4w3mf'
+
+STRIPE_WEBHOOK_SECRET = "whsec_s033FK7n4xQXJ7bfh3HbRteqqriPrP0y"
