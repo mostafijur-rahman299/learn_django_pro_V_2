@@ -37,9 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'djmoney',
+    'djmoney.contrib.exchange',
+
     'app',
     'payment',
-    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -113,7 +116,7 @@ CACHES = {
     }
 }
 
-
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
@@ -148,3 +151,9 @@ STRIPE_PUBLISHABLE_KEY = 'pk_test_O6wiMgMeQ0vOb6q24zKjRCoK00ATArkfbL'
 STRIPE_SECRET_KEY = 'sk_test_7R9QtO5N29ROUi0rSpUYv7N700ZwN4w3mf'
 
 STRIPE_WEBHOOK_SECRET = "whsec_s033FK7n4xQXJ7bfh3HbRteqqriPrP0y"
+
+# CURRENCIES = ('USD', 'EUR')
+# CURRENCY_CHOICES = [('USD', 'USD $'), ('EUR', 'EUR €')]
+EXCHANGE_BACKEND = 'djmoney.contrib.exchange.backends.FixerBackend'
+OPEN_EXCHANGE_RATES_URL = 'https://openexchangerates.org/api/historical/2017-01-01.json?symbols=EUR,NOK,SEK,CZK'
+FIXER_URL = 'http://data.fixer.io/api/2013-12-24?symbols=EUR,NOK,SEK,CZK'
