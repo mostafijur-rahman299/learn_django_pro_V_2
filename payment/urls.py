@@ -12,4 +12,8 @@ urlpatterns = [
 
     path('api/checkout-session/<id>/', create_checkout_session, name='api_checkout_session'),
     path('webhooks/stripe/', stripe_webhook, name='stripe-webhook'),
+
+
+    path('create-payment-intent/', StripeIntentView.as_view(), name='create-payment-intent'),
+    path('custom-payment/', CustomPaymentView.as_view(), name='custom-payment')
 ]

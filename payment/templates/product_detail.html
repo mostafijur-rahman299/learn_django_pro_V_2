@@ -28,15 +28,22 @@
         </div>
         <div class="card-footer d-flex">
             <button class="btn btn-success ml-auto" id="checkout-button">Checkout</button>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                        data-key="{{ stripe_publishable_key }}"
+                        data-description="You are purchasing VaidTech"
+                        data-amount="1000"
+                        data-currency="USD"
+                        data-locale="auto">
+                </script>
+              </form>
         </div>
     </div>
 </div>
 
 <script src="https://js.stripe.com/v3/"></script>
 
-<script>
-    console.log('helllsdfsdf')
-</script>
 
 <script type="text/javascript">
     // Create an instance of the Stripe object with your publishable API key
@@ -78,6 +85,9 @@
             });
     });
 </script>
+
+
+
 
 <!-- Add JavaScript Here-->
 {% endblock content %}
